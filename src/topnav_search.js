@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class TopnavSearch_big extends Component {
+class TopnavSearchBig extends Component {
     render() {
         return (
             <React.Fragment>
@@ -21,7 +21,7 @@ class TopnavSearch_big extends Component {
         )
     }
 }
-class TopnavSearch_small extends Component {
+class TopnavSearchSmall extends Component {
     render() {
         return (
             <React.Fragment>
@@ -50,6 +50,6 @@ class TopnavSearch_small extends Component {
 }
 
 export {
-    TopnavSearch_small,
-    TopnavSearch_big
+    TopnavSearchSmall,
+    TopnavSearchBig
 }
