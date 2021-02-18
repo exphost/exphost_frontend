@@ -27,7 +27,7 @@ class App extends Component {
   };
   componentDidMount () {
       const script = document.createElement("script");
-      script.src = "sb-admin-2.js";
+      script.src = "/sb-admin-2.js";
       script.async = true;
       document.body.appendChild(script);
   }
