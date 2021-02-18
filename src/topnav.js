@@ -11,21 +11,21 @@ class Topnav extends Component {
             <TopnavSearch_big />
             <ul className="navbar-nav ml-auto">
 
-                <li className="nav-item dropdown no-arrow d-sm-none">
-                  <TopnavSearch_small />
+                <li key="1" className="nav-item dropdown no-arrow d-sm-none">
+                  <TopnavSearchSmall />
                 </li>
 
-                <li className="nav-item dropdown no-arrow mx-1">
+                <li key="2" className="nav-item dropdown no-arrow mx-1">
                   <TopnavAlerts />
                 </li>
 
-                <li className="nav-item dropdown no-arrow mx-1">
+                <li key="4" className="nav-item dropdown no-arrow mx-1">
                   <TopnavMessages />
                 </li>
 
                 <div className="topbar-divider d-none d-sm-block"></div>
 
-                <li className="nav-item dropdown no-arrow">
+                <li key="3" className="nav-item dropdown no-arrow">
                   <TopnavProfile />
                 </li>
 
