@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class TopnavMessages extends Component {
     constructor(props) {
@@ -60,7 +61,7 @@ class TopnavMessages extends Component {
     }
     render() {
         const messages = this.state.messages.slice(0,this.state.max_messages).map((message) =>
-            <a className="dropdown-item d-flex align-items-center" href="#">
+            <Link key={message.id} className="dropdown-item d-flex align-items-center" to={"/user/messages/"+message.id}>
                 <div className="dropdown-list-image mr-3">
                     <img className="rounded-circle" src={message.icon}
                                                 alt=""/>
@@ -70,22 +71,22 @@ class TopnavMessages extends Component {
                     <div className="text-truncate">{message.msg}</div>
                     <div className="small text-gray-500">{message.author} · {message.ago}</div>
                 </div>
-            </a>
+            </Link>
         )
         return (
             <React.Fragment>
-                    <a className="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
-                                                                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <Link className="nav-link dropdown-toggle" to="/" id="messagesDropdown" role="button"
+                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i className="fas fa-envelope fa-fw"></i>
                         <span className="badge badge-danger badge-counter">{this.calcMessageCount()}</span>
-                    </a>
+                    </Link>
                     <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                          aria-labelledby="messagesDropdown">
                         <h6 className="dropdown-header">
                             Message Center
                         </h6>
                         {messages}
-                        <a className="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+                        <Link className="dropdown-item text-center small text-gray-500" to="/user/messages">Read More Messages</Link>
                     </div>
             </React.Fragment>
         )

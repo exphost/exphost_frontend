@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 
 class TopnavAlerts extends Component {
     constructor(props) {
@@ -66,7 +67,7 @@ class TopnavAlerts extends Component {
     }
     render() {
         const alerts_list = this.state.alerts.slice(0,this.state.max_alerts).map((alert_entry) =>
-            <a className="dropdown-item d-flex align-items-center" href="#">
+            <Link key={alert_entry.id} className="dropdown-item d-flex align-items-center" to={"/user/alerts/"+alert_entry.id}>
                 <div className="mr-3">
                     <div className={"icon-circle " + alert_entry.icon_backgroung}>
                         <i className={"fas " + alert_entry.icon + " text-white"}></i>
@@ -76,22 +77,22 @@ class TopnavAlerts extends Component {
                     <div className="small text-gray-500">{alert_entry.date}</div>
                     <span className={"font-weight"+(alert_entry.readed || "-bold")}>{alert_entry.msg}</span>
                 </div>
-            </a>
+            </Link>
         )
         return (
             <React.Fragment>
-                    <a className="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                                                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <Link className="nav-link dropdown-toggle" to="/" id="alertsDropdown" role="button"
+                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i className="fas fa-bell fa-fw"></i>
                         <span className="badge badge-danger badge-counter">{this.calcAlertCount()}</span>
-                    </a>
+                    </Link>
                     <div className="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                          aria-labelledby="alertsDropdown">
                         <h6 className="dropdown-header">
                             Alerts Center
                         </h6>
                         {alerts_list}
-                        <a className="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+                        <Link className="dropdown-item text-center small text-gray-500" to="/user/alerts">Show All Alerts</Link>
                     </div>
             </React.Fragment>
         )

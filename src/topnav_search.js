@@ -25,10 +25,10 @@ class TopnavSearchSmall extends Component {
     render() {
         return (
             <React.Fragment>
-                    <a className="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button"
+                    <div className="nav-link dropdown-toggle" id="searchDropdown" role="button"
                                                                                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i className="fas fa-search fa-fw"></i>
-                    </a>
+                    </div>
                     <div className="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                          aria-labelledby="searchDropdown">
                         <form className="form-inline mr-auto w-100 navbar-search">
