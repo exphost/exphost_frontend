@@ -33,7 +33,23 @@ class Instances extends Component {
             {row.map((col, index2) =>
                 <td key={index2}>{col}</td>
             )}
-            <td>Actions</td>
+            <td>
+                <button className="btn btn-success btn-sm m-1" type="button">
+                    <i className="fas fa-play fa-sm"/>
+                </button>
+                <button className="btn btn-warning btn-sm m-1" type="button">
+                    <i className="fas fa-pause fa-sm"/>
+                </button>
+                <button className="btn btn-danger btn-sm m-1" type="button">
+                    <i className="fas fa-stop fa-sm"/>
+                </button>
+                <button className="btn btn-outline-danger btn-sm m-1" type="button">
+                    <i className="fas fa-trash fa-sm"/>
+                </button>
+                <button className="btn btn-outline-secondary  btn-sm m-1" type="button">
+                    <i className="fas fa-cog fa-sm"/>
+                </button>
+            </td>
             </tr>
         )
         return (
