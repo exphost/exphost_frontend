@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 class Instances extends Component {
     constructor(props) {
@@ -17,22 +18,8 @@ class Instances extends Component {
             ],
 
             data: [
-              [
-                "Name1",
-                "Status1",
-                "Roles1",
-                "Tags1",
-                "Location1",
-                "Type1",
-              ],
-              [
-                "Name2",
-                "Status2",
-                "Roles2",
-                "Tags2",
-                "Location2",
-                "Type2",
-              ],
+                [
+                ]
             ]
         }
     }
@@ -61,7 +48,7 @@ class Instances extends Component {
                       New instances
                     </button>
                   </Link>
-                  <button className="btn btn-primary m-1" type="button">
+                  <button className="btn btn-primary m-1" type="button" onClick={() => this.load_data()}>
                           <i className="fas fa-redo"/>
                   </button>
                   </div>
@@ -90,13 +77,24 @@ class Instances extends Component {
 
         )
     }
+  load_data() {
+      axios.get('http://127.0.0.1:8090/instances.json')
+        .then(res =>{
+          const instances = res.data;
+          this.setState({"data":instances});
+      })
+  }
   componentDidMount () {
+      this.load_data()
+      var script_tables = document.getElementById("script_tables")
+      if(script_tables)
+          script_tables.remove();
       const script = document.createElement("script");
-      script.src = "/tables.js";
-      script.async = true;
-      document.body.appendChild(script);
+        script.id="script_tables";
+        script.src = "/tables.js";
+//        script.async = true;
+        document.body.appendChild(script);
   }
 }
 
 export default Instances;
-

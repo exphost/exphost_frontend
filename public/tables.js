@@ -1,8 +1,4 @@
 $(document).ready(function() {
-  $('#dataTable2').DataTable();
-});
-
-$(document).ready(function() {
     // Setup - add a text input to each footer cell
     $('#dataTable tfoot th').each( function () {
         var title = $(this).text();
