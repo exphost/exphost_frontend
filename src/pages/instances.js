@@ -94,7 +94,7 @@ class Instances extends Component {
         )
     }
   load_data() {
-      axios.get('http://127.0.0.1:8090/instances.json')
+      axios.get('/mocks/instances.json')
         .then(res =>{
           const instances = res.data;
           this.setState({"data":instances});
