@@ -9,6 +9,7 @@ import Sidebar from './sidebar'
 import Topnav from './topnav'
 import Dashboard from './pages/dashboard'
 import Instances from './pages/instances'
+import NewInstance from './pages/instances_new'
 import MariaDB from './pages/mariadb'
 
 class App extends Component {
@@ -22,9 +23,10 @@ class App extends Component {
                 <Topnav />
                 <div className="container-fluid">
                     <Route exact path = "/" component = {Dashboard} />
-                    <Route path = "/dashboard" component = {Dashboard} />
-                    <Route path = "/component/instances" component = {Instances} />
-                    <Route path = "/component/mariadb" component = {MariaDB} />
+                    <Route exact path = "/dashboard" component = {Dashboard} />
+                    <Route exact path = "/component/instances" component = {Instances} />
+                    <Route exact path = "/component/instances/new" component = {NewInstance} />
+                    <Route exact path = "/component/mariadb" component = {MariaDB} />
                 </div>
               </div>
             </div>

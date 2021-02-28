@@ -59,7 +59,7 @@ class Instances extends Component {
               <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                   <h6 className="m-0 font-wight-bold text-primary">Instances</h6>
                   <div>
-                  <Link to='/component/instanes/new' className="m-1">
+                  <Link to='/component/instances/new' className="m-1">
                     <button className="btn btn-primary" type="button">
                       New instances
                     </button>
